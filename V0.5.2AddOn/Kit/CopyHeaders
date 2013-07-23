@@ -1,0 +1,40 @@
+#!/bin/sh
+KERNEL_PATH=/Data/Source/Kernel/
+BE_BUILDER_PATH=/Data/Source/V0.5.2BeBuilder/
+LIB_NAME_AND_PATH="/Data/Source/V0.5.2AddOn/Kit/obj.x86/libBeBuilder.a"
+LIB_FINAL_TARGET="/Data/Source/V0.5.2AddOn/KitDeveloper/Lib/libBeBuilder.a"
+HDR_FINAL_TARGET="/Data/Source/V0.5.2AddOn/KitDeveloper/Header/"
+echo "Creating Link in Header dir"
+rm $HDR_FINAL_TARGET"*.h"
+cp -f $BE_BUILDER_PATH"AddOn.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"ComponentList.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"Component.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"ComponentItem.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"ComponentKindaView.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"CodeLine.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"CodeFile.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"Parser.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"CodeGenerator.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"Property.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyList.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorView.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorWindow.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/MenuPropertyEditorChoice.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorChoiceView.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorChoice.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorMultiChoice.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorMultiChoiceView.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorStandardView.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"PropertyEditor/PropertyEditorStandard.h" $HDR_FINAL_TARGET
+cp -f $BE_BUILDER_PATH"GlobalVar.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"Object.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"FileWriter.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"FileReader.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"FileRW.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"GeneralException.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"BGeneralWindow.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"BGeneralWindowOption.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"BOption.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"Global.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"Couleur.h" $HDR_FINAL_TARGET
+cp -f $KERNEL_PATH"StringList.h" $HDR_FINAL_TARGET

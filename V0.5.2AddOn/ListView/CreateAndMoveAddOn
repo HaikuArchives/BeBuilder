@@ -1,0 +1,7 @@
+#!/bin/sh
+DIR_MAKE=/Data/Source/V0.5.2AddOn/ListView/
+DIR_ADDON=/Data/Source/V0.5.2BeBuilder/obj.x86/AddOn
+ADDON_NAME=ListViewAddOn
+cd $DIR_MAKE
+make
+mv $DIR_MAKE"obj.x86/"$ADDON_NAME $DIR_ADDON

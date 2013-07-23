@@ -1,0 +1,179 @@
+Bit by Bit: BFilePanels and Saving Files
+By Stephen Beaulieu <hippo@be.com>
+
+In this installment, Rephrase becomes a usable basic plain
+text editor with the introduction of file open and save
+capabilities.
+
+You'll find this version of Rephrase at:
+
+<ftp://ftp.be.com/pub/samples/tutorials/rephrase/rephrase0.1d4.zip>
+
+Rephrase 0.1d4
+New Features
+Create new phrases.
+Open existing phrases.
+Save phrases.
+
+This version of Rephrase introduces too many programming
+concepts to cover in one article. Therefore, next week's
+article will not introduce any new sample code.
+
+
+Programming Concepts
+
+BFilePanels provide windows that let a user navigate a
+file system to open one or more files or save a file at a
+specific location. A BFilePanel can either open or save
+files, but this flavor must be set when it is created.
+
+All file panels present the user with a navigable view of
+the file system. The panel's default button sends a
+message to a specified target that contains identifiers
+for the file or files to open or save. By default, the
+target is the BApplication object, but a different object
+can be set through the constructor or SetMessage(). The
+messages sent vary depending on the flavor of the panel.
+
+Open panels send a message containing all the entry_refs
+selected by the user. Save panels send a message with the
+entry_ref of the directory selected by the user and the
+name of the file to create.
+
+Open panel messages have a default "what" code of
+B_REFS_RECEIVED. Save panels have a default code of
+B_SAVE_REQUESTED. An application can specify a different
+message for the panel to send through the constructor or
+SetMessage(). The file panel information is added to this
+new message.
+
+Both save and open file panels also send B_CANCEL messages
+whenever the panel is closed, has its cancel button pressed,
+or is hidden. This means that when a user selects the open
+or save button, two messages are sent: first, the save or
+open message, and then the B_CANCEL message to inform the
+target that the panel is no longer visible.
+
+Implementation details:
+
+1.  Don't build a file panel until it is requested. This
+    saves resources and time.
+    [pDisplay.cpp:361-367 & Rephrase.cpp:125-129]
+
+2.  Do not delete commonly used BFilePanels, as they can
+    take time to create. Instead, hide them and show them
+    again when needed. In addition, the file panel will
+    remember its last browsed directory.
+
+3.  There is only one open file panel for Rephrase. Opening
+    new display windows is handled in the app.
+    [Rephrase.h:24]
+
+4.  Each phrase display window has its own save panel,
+    as each phrase might need to be saved to a different
+    directory. Also, synchronizing access to one save
+    panel from many documents would be very complicated.
+    With independent save panels, each panel can target
+    a different phrase display window.
+    [pDisplay.h:29]
+
+5.  With the introduction of custom message types for
+    opening and saving phrases, it's now necessary to
+    override MessageReceived() in the Rephrase and
+    pDisplay classes.
+
+    There are three main guidelines when overriding
+    MessageReceived():
+
+    - Use a switch on the "what" field of the BMessage to
+      specify the flow of code.
+
+	- Either call functions or wrap each case in brackets
+	  to avoid warnings and errors about "jumping past
+	  initializers."
+
+	- Always send unrecognized messages to your superclass
+	  in the default case of the switch statement.
+	  [pDisplay.cpp:164-202 & Rephrase.cpp:111-151]
+
+6.  The New menu item sends a NEW_PHRASE message to the
+    app, which then creates and shows an empty display
+    window.
+    [Rephrase.cpp:116-121]
+
+7.  The Open menu item sends an OPEN_PHRASE message to the
+    app. In response the app will show the open panel,
+    creating it if necessary. The file panel sends a message
+    that is handled in RefsReceived().
+    [Rephrase.cpp:122-136]
+
+8.  To save a phrase to a file, the file's location must
+    be specified. This happens in one of two ways: either
+    the phrase display window is opened with a given entry_ref
+    or the entry_ref is specified in a save panel.
+
+    The save panel is shown if an entry_ref has never been
+    set for the file, or if the SaveAs item is selected to
+    save the contents to a new location.
+
+9.  pDisplay::SaveTo() handles all the work. Its sole
+    argument is a BEntry *. If the argument is NULL, the
+    save panel is shown so the user can specify a location
+    for the file.
+
+    Otherwise, a BFile object is created and told to create
+    the actual file if it does not already exist. Then the
+    contents of the phrase are written to the file, and
+    the size of the file is set accordingly. A BNodeInfo
+    object is created so that new files can get their mime
+    type set appropriately.
+
+    Finally the window title is set to the name of the file
+    and the entry_ref is cached in the window for future
+    use.
+    [pDisplay.cpp:352-433]
+
+10. The Save menu item sends a SAVE_PHRASE message to the
+    phrase window. In response, pDisplay::Save() checks to
+    see if the cached entry_ref has been set. If so, it
+    creates a BEntry object and passes it to SaveTo(). If
+    not, it passes NULL so that the save panel can be shown.
+    [pDisplay.cpp:334-350]
+
+11. The SaveAs menu item sends a SAVE_PHRASE_AS message
+    to the window. In response, pDisplay::SaveTo(NULL) is
+    called, bringing up the save panel to specify the new
+    file location.
+    [pDisplay.cpp:174-178]
+
+12. pDisplay no longer calls Show() in the constructor.
+    As BFilePanels need to have Show() called on them, it
+    made sense to have consistency with all window-related
+    classes.
+
+13. pDisplay::TargetMenuItems() specifies appropriate
+    targets for the menu items. The New, Open, About, and
+    Quit items target the application, while the items in
+    the Edit menu target the text view.
+    [pDisplay.cpp:277-303]
+
+14. BTextView::TextRect() returns a special rectangle. The
+    sides and top of the rectangle are set from a rectangle
+    passed in the constructor or SetTextRect(). The bottom
+    value is set from the height of the text in the text
+    view. Accordingly, the text rect could be much taller
+    or shorter than the rect specified in SetTextRect().
+
+15. The BString utility class is used as a replacement for
+    char *s throughout much of Rephrase. The class provides
+    type-safe and easy sprintf() functionality through the
+    operator<< and operator+=.
+    [pDisplay.cpp:394-398]
+
+
+There is considerably more going on in this week's sample
+code. This extra code deals with properly quitting the
+application, and will be covered in detail next week.
+
+
+
