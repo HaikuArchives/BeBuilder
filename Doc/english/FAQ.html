@@ -1,0 +1,74 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>BeBuilder V0.5 Documentation</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR=#f0f0f0>
+<HR>
+
+<H2 ALIGN="CENTER">Frequently Asked Questions</H2>
+<UL>
+	<LI><B>Business Model</B><BR>
+	As you might noticed BeBuilder is freeware... Only external addons can be sold. Ex: a third party could create an AddOn for BeBuilder to connect to an Oracle Database and could sell it and make money. <BR>
+We want every BeOS developer to be able to create easily a GUI without spending a cent. <BR>
+All components included with BeOS will be added to BeBuilder. It's just a question of time! 
+	<BR>
+	<BR>
+
+
+	<LI><B>PPC Version of BeBuilder</B><BR>
+Unfortunately i do not have any PPC machine at home for the moment. I hope that Be will do a port on those wonderful G4...
+	<BR>
+	<BR>
+
+	<LI><B>AddOns</B><BR>
+	Some people asked me if i could add their components to BeBuilder, or if an API was available... well with V0.3 i can proudly announce :-) that YEP! now you can add your own components into BeBuilder.
+Nevertheless, the addon protocol is in its early stages so the developer's kit is only available for those who will ask for it!<br>
+In V0.5 the very common components will be included in BeBuilder as static AddOns in the BeBuilder exe. If you want to add your addon in the next release of BeBuilder, just contact me.
+	<BR>
+	<BR>
+
+	<LI><B>Where do I pop in my code so when you click a Button it executes that code?</B><BR>
+
+	This is an e-mail i sent few days ago to BoMaX, a friendly BeBuilder user! <BR>
+
+	From: Jerome Fillon <fillon@colba.net> <BR>
+	To: BoMaX <XXXX@XXXXXXX><BR>
+	Subject: Re: BeBuilder <BR>
+	Date: lundi 11 janvier 1999 19:13 <BR>
+	Ok. <BR>
+	<BR>
+	Let's begin with BeBuilder V0.2 and create an application through the tutorial. <BR> <BR>
+	
+	When your gui is ready i.e. with a couple of buttons, editboxes, check boxes , radio buttons and menu items. <BR>
+Select in the list the active item like a button or a menuitem.<BR>
+
+Once the item is selected, go in the property list in the properties windows.<BR> You should notice something like "Message = ". Click on it and specify a string like B_MESSAGE_BUTTON_SAVE  for a "save" button you have in your gui. <BR>
+I wrote B_MESSAGE_XXX because it's the "norm" in the BeBook but you can write what you want... ;-) You need to be sure that the last 4 letters of the string you used are unique in the "application"... <BR>and generate the code... if it's a Button, CheckBox, Radio or TextControl go to the AViewxxx.cpp the code generated for the view that is responsible of your controls.<BR>
+In the MessageReceived function you will see your <BR> B_MESSAGE_BUTTON_SAVE :<BR>
+// Add your handler here<BR>
+
+you add your code here... for example : printf("My button is running!");
+don't forget to add #include <<>stdio.h<>>  ;-)<BR>
+and you are done...
+do a "make" and it works! ;-) <BR>
+
+hope it helps you!
+
+	<BR>
+	<BR>
+
+
+</UL>
+<HR>
+
+
+<HR>
+
+<A HREF="Index.html">Index</A>
+</BODY>
+
+</HTML>

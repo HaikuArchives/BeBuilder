@@ -1,0 +1,72 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Documentation BeBuilder V0.5</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR=#f0f0f0>
+<HR>
+
+<H2 ALIGN="CENTER">Questions et Réponses</H2>
+<UL>
+	<LI><B>Modèle d'affaires</B><BR>
+	Comme vous lèavez remarqué BeBuilder est un gratuitciel... Seuls les addons externes peuvent être vendus. Ex: une compagnie pourrait très bien créér un addon pour se connecter à une base Oracle, le vendre et faire de l'argent.<BR>
+Nous voulons que tous les developpeurs BeOS soient capables de créér facilement une interface graphique sans dépenser une cent. Tous les composants inclus dans BeOS seront ajoutés dans BeBuilder et seront gratuits. C'est juste une question de temps!
+	<BR>
+	<BR>
+
+
+	<LI><B>Version PPC de BeBuilder</B><BR>
+Malheureusement je ne possède pas de machine PPC pour le moment. J'espère que Be réalisera bientôt un portage sur la plateforme G4...
+	<BR>
+	<BR>
+
+	<LI><B>AddOns</B><BR>
+	Souvent on m'a demandé si on pouvait ajouter ses composants à BeBuilder ou si une API était disponible... Depuis la version V0.3 BeBuilder supporte les addons et donc vous pouvez ajouter vos composants dans BeBuilder.<br>
+Néanmoins, le protocole addon en est à ses débutset son API a tendance à être modifié de version en version.<br>
+Dans la version V0.5 les composants communs sont directement inclus sous forme d'addons statiques dans BeBuilder.<br>
+Pour écrire vos addons si vous avez besoin d'aide (et vous en aurez! :) ) n'hésitez surtout à communiquer avec moi par E-Mail.
+	<BR>
+	<BR>
+
+	<LI><B>Ou est-ce que je place mon code pour le faire executer quand je clique sur le bouton?</B><BR>
+
+	Ceci est un mail traduit de l'anglais envoyé par BoMaX. <BR>
+
+	From: Jerome Fillon <fillon@videotron.ca> <BR>
+	To: BoMaX <XXXX@XXXXXXX><BR>
+	Subject: Re: BeBuilder <BR>
+	Date: lundi 11 janvier 1999 19:13 <BR>
+	Ok. <BR>
+	<BR>
+	Demarrons BeBuilder V0.2 et créons une application avec l'aide des exemples.<BR> <BR>
+	
+	Quand l'interface est prête c.a.d avec des boutons, textcontrol...<BR>
+Selectionner dans la liste le bouton ou vous voulez ajouter une action.<BR>
+
+Une fois l'objet selectionné, aller dans la liste de propriété. <BR>Remarquer la propriété <i>Message</i>. Cliquer dessus et spécifié une chaine comme par exemple B_MESSAGE_BUTTON_SAVE pour un bouton "sauvegarde". <BR>
+J'écris B_MESSAGE_XXX parce que c'est la norme dans le BeBook mais vous pouvez écrire ce que vous voulez... :)
+Vous devez ABSOLUMENT avoir les 4 dernieres lettres uniques pour l'application.<BR>
+Si vous avez un bouton alors le code executé lors de l'action sur le bouton se trouvera dans la vue (i.e AViewComponentXX.cpp).<BR>
+Si vous ouvrez ce fichier (i.e AViewComponentXX.cpp) dans la fonction MessageReceived vous trouverez :<BR>
+B_MESSAGE_BUTTON_SAVE : <BR>
+//Add Your Handler here <BR>
+Ajouter votre code par example : printf("Mon bouton fonctionne!"); sans oublier d'ajouter #include <<>stdio.h<>>  ;-)<BR>
+Et tout est fait! :)
+
+<BR>
+	<BR>
+
+
+</UL>
+<HR>
+
+
+<HR>
+
+<A HREF="Index.html">Index</A>
+</BODY>
+
+</HTML>
