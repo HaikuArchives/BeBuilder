@@ -129,7 +129,7 @@ void TWindowComponent::WindowActivated(bool active)
 		else
 		{
 			printf("TWindowComponent::WindowActivated Dynamic_cast fucked!\n");
-			return false;
+			return;
 		}
 //		ShowDebug("AddChild Quitting.");
 
@@ -236,7 +236,7 @@ bool TWindowComponent::WhenRemoveChild(void)
 bool TWindowComponent::ChangeProperty(string APropertyName, string APropertyValue)
 {
 //	ShowDebug(string("ChangeProperty Inside. NAME=") + APropertyName + string(" value=") + APropertyValue);
-	window_type TypeWindow = 0;
+	window_type TypeWindow = window_type(0);
 	uint32 FlagWindow = 0;
 	if (FDebugMode==1)
 	{

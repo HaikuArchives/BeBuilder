@@ -1,6 +1,9 @@
 #ifndef __BEBACK_GLOBAL_
 #define __BEBACK_GLOBAL_
 #include <string>
+#include <Rect.h>
+#include <Point.h>
+#include <Message.h>
 extern void ShowMessage(const char *);
 extern void ShowMessage(char *);
 extern void ShowMessage(const char *,BRect);
