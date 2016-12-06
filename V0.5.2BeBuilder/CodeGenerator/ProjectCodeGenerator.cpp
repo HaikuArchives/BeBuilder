@@ -144,7 +144,8 @@ bool TProjectCodeGenerator::SkeletonMakeFile(TFileRW *AFileRW)
 		AFileRW->WriteALine("COMPILER_FLAGS = -gdwarf-2\n");
 		AFileRW->WriteALine("LINKER_FLAGS = -gdwarf-2\n");
 		AFileRW->WriteALine("\n## include the Be makefile-engine\n");
-		AFileRW->WriteALine("include /boot/develop/etc/makefile-engine\n");
+		AFileRW->WriteALine("DEVEL_DIRECTORY := \\\n$(shell findpaths -r \"makefile_engine\" B_FIND_PATH_DEVELOP_DIRECTORY\n");
+		AFileRW->WriteALine("include $(DEVEL_DIRECTORY)/etc/makefile-engine\n");
 	//	AFileRW->WriteALine("\n");
 		printf("TCodeGenerator::SkeletonMakeFile End Of Writing!\n");
 	}
