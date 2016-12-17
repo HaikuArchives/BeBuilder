@@ -4,6 +4,7 @@
 #include "Object.h"
 #include <Path.h>
 #include <File.h>
+#include <Entry.h>
 
 class TCodeFile : public TObject
 {

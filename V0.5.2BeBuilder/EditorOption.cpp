@@ -36,7 +36,7 @@ bool TEditorOption::FindAvailableEditors(void)
 //	DEBUGPRINT("TEditorOption::FindAvailableEditors supers="<<supers);	
 	for (ind=0; ind < subs; ind++)
 	{
-		msg.FindString("applications",ind,&ptr);
+		msg.FindString("applications",ind,((const char **)&ptr));
 		DEBUGPRINT("TEditorOption::FindAvailableEditors "<<ptr);
 /*
 	FMenuNewItem = new BMenuItem(MENU_NEW_LABEL, new BMessage(MENU_FILE_NEW), 'N');	

@@ -15,7 +15,7 @@ B_DIRECTORY_NODE, and B_SYMLINK_NODE
 	if (message==NULL)
 		FMessage = new BMessage(B_DIR_REFS_RECEIVED);
 	else
-		FMessage = new BMessage(message);
+		FMessage = new BMessage(*message);
 	if (Window()->Lock())
 	{
 		background = Window()->ChildAt(0);

@@ -293,7 +293,7 @@ bool TComponent::FindPropertyName(string APropertyName, const char *AValueToFind
 bool TComponent::SetAddOnMessage(BMessage *AMessage)
 {
 	if (FMessageAddOn != NULL) delete FMessageAddOn;
-	FMessageAddOn = new BMessage(AMessage);
+	FMessageAddOn = new BMessage(*AMessage);
 	return true;
 }
 

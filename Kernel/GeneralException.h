@@ -7,8 +7,8 @@
 #ifndef __GENERAL_EXCEPTION_H__
 #define __GENERAL_EXCEPTION_H__
 #include <string>
-class GeneralException : public exception
-{
+#include <exception>
+class GeneralException : public std::exception {
 	public:
 //		GeneralException(char *AMessage, char *ALocation);
 		GeneralException(const char *AMessage,const char *ALocation,bool ThrowNow = false);

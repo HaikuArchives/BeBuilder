@@ -4,6 +4,7 @@
 #include <alloc.h>
 #include <Button.h>
 #include <Handler.h>
+#include <Window.h>
 #define B_DIR_REFS_RECEIVED 1414
 class TOpenDir: public BFilePanel
 {

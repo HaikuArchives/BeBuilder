@@ -18,7 +18,7 @@ void TBeBuilderOption::ApplyUpdates(void)
 {
 	try
 	{
-		SetString("EditorMimeString",FEditorMimeType.c_str());
+		SetString("EditorMimeString",(char *)FEditorMimeType.c_str());
 		BOption::ApplyUpdates();
 	}
 	catch(...)

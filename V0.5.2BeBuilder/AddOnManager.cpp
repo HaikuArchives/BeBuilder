@@ -314,7 +314,7 @@ void TAddOnManager::MessageReceived(BMessage *message)
 					{
 						ShowDebug(string("MessageReceived AddOnId==-1 AddOnClassName=") + AddOnClassName);
 						// Due to a major problem in gcc... with pointer to static function... 
-						GetComponentInstance = FListInstance->GetItem(AddOnClassName);
+						GetComponentInstance = (TComponent* (*)(const char *, const char *, BRect, TComponent*))FListInstance->GetItem(AddOnClassName);
 					}
 //					else
 //					{
