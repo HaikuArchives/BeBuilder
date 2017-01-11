@@ -2,6 +2,7 @@
 #define __COMPONENT_KINDA_VIEW_H__
 
 #include <string>
+#include <cmath>
 //#include "ComponentList.h"
 using namespace std;
 #include "Component.h"

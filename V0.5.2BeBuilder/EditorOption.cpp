@@ -44,7 +44,7 @@ bool TEditorOption::FindAvailableEditors(void)
 
 */		
 		BMessage *AMessage = new BMessage(MESSAGE_EDITOR_OPTION);
-		FListMimeCode->AddItem(new string(ptr));
+		FListMimeCode->AddItem(new std::string(ptr));
 		BMimeType AMimeType(ptr);
 		char Descript[100];
 		AMimeType.GetShortDescription(Descript);
@@ -71,9 +71,9 @@ void TEditorOption::MessageReceived(BMessage *message)
 			if (message->FindInt32("index",&Index)==B_OK)
 			{
 				TBeBuilderOption ABeBuilderOption(PREFS_FILENAME);
-				ABeBuilderOption.FEditorMimeType = ((string *)FListMimeCode->ItemAt(Index))->c_str();
+				ABeBuilderOption.FEditorMimeType = ((std::string *)FListMimeCode->ItemAt(Index))->c_str();
 				ABeBuilderOption.ApplyUpdates();					
-				DEBUGPRINT("TEditorOption::MessageReceived "<<((string *)FListMimeCode->ItemAt(Index))->c_str());
+				DEBUGPRINT("TEditorOption::MessageReceived "<<((std::string *)FListMimeCode->ItemAt(Index))->c_str());
 			}
 			else
 				DEBUGPRINT("TEditorOption::MessageReceived Index not found!");

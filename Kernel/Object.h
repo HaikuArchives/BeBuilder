@@ -5,6 +5,7 @@
 #include <strstream>
 #include "Global.h"
 #include <Message.h>
+#include <iostream>
 //#include "GlobalVar.h"
 
 using namespace std;

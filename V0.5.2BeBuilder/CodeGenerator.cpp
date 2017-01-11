@@ -258,7 +258,7 @@ void TCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	ShowDebug("GenerateAll Quitting");
 }
 
-bool TCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile = true)
+bool TCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile)
 {
 	if (CreateBody(ReallyWriteInFile)!=true) return false;
 	if (CreateHeader(ReallyWriteInFile)!=true) return false;

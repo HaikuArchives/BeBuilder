@@ -1,6 +1,7 @@
 #ifndef __FILEWRITER_H__
 #define __FILEWRITER_H__
 #include <string>
+#include <cstring>
 //#include <fstream>
 #include <File.h>
 #include <stdio.h>

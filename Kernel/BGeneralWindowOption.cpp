@@ -7,7 +7,7 @@ BGeneralWindowOption::BGeneralWindowOption(const char *filename,const char *Wind
 		if (WindowName!=NULL)
 		{
 			TheWindowName = WindowName;
-			string final("");
+			std::string final("");
 			final = TheWindowName + "_Top";
 			GetFloat(final.c_str(),&Top);
 			final = TheWindowName + "_Bottom";
@@ -44,7 +44,7 @@ void BGeneralWindowOption::ApplyUpdates(void)
 		//ShowMessage("BGeneralWindowOption ",TheWindowName.data())
 		if (TheWindowName.length()>0)
 		{
-			string final("");
+			std::string final("");
 			final = TheWindowName + "_Top";
 			SetFloat(final.c_str(),Top);
 			final = TheWindowName + "_Bottom";

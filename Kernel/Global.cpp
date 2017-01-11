@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include <cstring>
 
 void ShowMessage(const char *);
 void ShowMessage(char *);
@@ -11,7 +12,7 @@ void ShowMessage(const char *,BPoint);
 void ShowMessage(const char *,long);
 void ShowMessageHexa(const char *, long);
 void ShowMessage(const char *, const char *);
-void ShowMessage(string);
+void ShowMessage(std::string);
 //-------CONVERSION TOOLS---------------
 char *IntToStr(int AInteger);
 char *IntToStr(long ALong);
@@ -24,8 +25,8 @@ int StrToInt(char *AStr);
 long StrToLong(char *AStr);
 double StrToDouble(char *AStr);
 //-----------STRING MANIPULATION-----------
-string StrCopy(const string AString, uint32 Start, uint32 length);
-bool IsFoundInside(string AString, const char *AValueToFind);
+std::string StrCopy(const std::string AString, uint32 Start, uint32 length);
+bool IsFoundInside(std::string AString, const char *AValueToFind);
 
 void ShowMessage(const char *Message)
 {
@@ -88,7 +89,7 @@ void ShowMessage(const char *Message, const char *MessageSuite)
 	alert->Go();	
 }
 
-void ShowMessage(string AString)
+void ShowMessage(std::string AString)
 {
 	BAlert*	alert = new BAlert(NULL, AString.c_str(), "OK");
 	alert->Go();		
@@ -158,10 +159,10 @@ double StrToDouble(char *AStr)
 	return atof(AStr);
 }
 
-string StrCopy(string AString, int Start, int length)
+std::string StrCopy(std::string AString, int Start, int length)
 {
- string truc = AString;
- string outtruc = "";
+ std::string truc = AString;
+ std::string outtruc = "";
 // if (Start > truc.length()) return outtruc;
  if (Start > truc.length()) return AString;
  for (long index= Start; index < Start + length; index++)
@@ -195,7 +196,7 @@ void PrintMessage(BMessage *AMessage,int tab)
 	printf("-- Fin Niveau %d --\n",tab);
 }
 
-bool IsFoundInside(string AString, const char *AValueToFind)
+bool IsFoundInside(std::string AString, const char *AValueToFind)
 {
 	long res;
 	res = AString.find(AValueToFind);

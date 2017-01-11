@@ -13,9 +13,9 @@ TProperty::TProperty(const char *AName, const char *AValue,uint32 level = 0, boo
 }
 */
 
-TProperty::TProperty(	const char *AName, const char *AValue, const char *AType = PROP_TYPE_STRING, 
-						bool AMultipleValue = false, bool ASimpleValue = true, const char *ADefaultList = "" ,
-						const char *GroupName = PROP_GENERAL_GROUP, uint32 level = 0, bool expanded = true)
+TProperty::TProperty(	const char *AName, const char *AValue, const char *AType, 
+						bool AMultipleValue, bool ASimpleValue, const char *ADefaultList ,
+						const char *GroupName, uint32 level, bool expanded)
 						:BStringItem(AName, level,expanded),TObject((string("TProperty ") + AName).c_str())
 {
 	FDebugMode = 1;

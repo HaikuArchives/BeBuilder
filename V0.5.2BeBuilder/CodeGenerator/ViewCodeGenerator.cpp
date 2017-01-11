@@ -171,7 +171,7 @@ bool TViewCodeGenerator::InsertionContructor(TFileRW *AFileRWHeader, TFileRW *AF
 */
 //New Functions
 
-bool TViewCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TViewCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine = new TCodeLine(FBodyCodeFile);
 	FBodyLine->Copyrights();
@@ -283,7 +283,7 @@ bool TViewCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TViewCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TViewCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 /*	FHeaderCodeFile = new TCodeFile(APath,ClassName,"h");
 	FBodyCodeFile = new TCodeFile(APath,ClassName,"cpp");
@@ -370,7 +370,7 @@ bool TViewCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TViewCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TViewCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	ShowDebug("CreateMakeFile Inside.");
 	TCodeLine *FMakeFileLine = new TCodeLine(FMakeFileCodeFile);
@@ -386,7 +386,7 @@ bool TViewCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TViewCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TViewCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FViewComponent->FParent->FCodeGenerator->FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <View.h>\n"); 
@@ -447,7 +447,7 @@ bool TViewCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TViewCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TViewCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	return true;
 }
@@ -473,7 +473,7 @@ void TViewCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 }
 
 
-bool TViewCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile = true)
+bool TViewCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile)
 {
 	FHeaderCodeFile = new TCodeFile(AClassName,APath,"h");
 	FBodyCodeFile = new TCodeFile(AClassName,APath,"cpp");

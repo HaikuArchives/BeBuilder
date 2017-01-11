@@ -1,7 +1,9 @@
 #ifndef __OPENDIR_H__ 
 #define __OPENDIR_H__ 
 #include <FilePanel.h>
-#include <alloc.h>
+#include <memory>
+#include <cstdlib>
+#include <cstring>
 #include <Button.h>
 #include <Handler.h>
 #include <Window.h>

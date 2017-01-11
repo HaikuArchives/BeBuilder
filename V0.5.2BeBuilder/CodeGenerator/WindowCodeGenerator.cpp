@@ -194,7 +194,7 @@ bool TWindowCodeGenerator::InsertionContructor(TFileRW *AFileRWHeader, TFileRW *
 */
 //-------- Dynamic Code --------------
 
-bool TWindowCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TWindowCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	FBodyLine = new TCodeLine(FBodyCodeFile);
 
@@ -286,7 +286,7 @@ bool TWindowCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TWindowCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TWindowCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	FHeaderLine = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine->Copyrights();	
@@ -364,7 +364,7 @@ bool TWindowCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TWindowCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TWindowCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	ShowDebug("CreateMakeFile Inside.");
 	FMakeFileLine = new TCodeLine(FMakeFileCodeFile);
@@ -385,7 +385,7 @@ bool TWindowCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TWindowCodeGenerator::CreateConstructeur(bool ReallyWriteInFile = true)
+bool TWindowCodeGenerator::CreateConstructeur(bool ReallyWriteInFile)
 {
 //bool AddProperty(TComponent *AComponent, const char *APropertyName,bool AddToProperty, bool AddToCodeGeneratorList);
 ShowDebug("CreateConstructeur Inside.");
@@ -566,7 +566,7 @@ void TWindowCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	PrepareCode(APath,ClassName,true);
 }
 
-bool TWindowCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile = true)
+bool TWindowCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile)
 {
 	//------------New dynamic code generation----------
 

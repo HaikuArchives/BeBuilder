@@ -12,8 +12,8 @@ class GeneralException : public std::exception {
 	public:
 //		GeneralException(char *AMessage, char *ALocation);
 		GeneralException(const char *AMessage,const char *ALocation,bool ThrowNow = false);
-		~GeneralException(void);
-		string	Message;
-		string	Location;
+		~GeneralException(void) throw ();
+		std::string	Message;
+		std::string	Location;
 };
 #endif

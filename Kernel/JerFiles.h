@@ -14,10 +14,12 @@
 #include <fs_attr.h>
 #include <Roster.h>
 #include <string.h>
+#include <string>
 #include <malloc.h>
 #include "Global.h"
 #include "GeneralException.h"
 #include "GlobalVar.h"
+using namespace std;
 //#include "BConfigOption.h"
 
 class TJerFile 

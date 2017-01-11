@@ -284,7 +284,7 @@ bool TMenuBarCodeGenerator::InsertionContructor(TFileRW *AFileRWHeader, TFileRW 
 
 */
 
-bool TMenuBarCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TMenuBarCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine = new TCodeLine(FBodyCodeFile);
 	FBodyLine->Copyrights();
@@ -393,7 +393,7 @@ bool TMenuBarCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TMenuBarCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TMenuBarCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine->Copyrights();
@@ -465,7 +465,7 @@ bool TMenuBarCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	}
 	return true;
 }
-bool TMenuBarCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TMenuBarCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	ShowDebug("CreateMakeFile Inside.");
 	TCodeLine *FMakeFileLine = new TCodeLine(FMakeFileCodeFile);
@@ -479,7 +479,7 @@ bool TMenuBarCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
 	ShowDebug("CreateMakeFile Quitting.");	
 	return true;
 }
-bool TMenuBarCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TMenuBarCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 
 	TCodeLine *FHeaderLine1 = new TCodeLine(FMenuBarComponent->FParent->FCodeGenerator->FHeaderCodeFile);
@@ -527,7 +527,7 @@ bool TMenuBarCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FBodyLine6->AddLine(NULL,ACtorLabel.c_str(),NULL,"}");
 	return true;
 }
-bool TMenuBarCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TMenuBarCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	return true;	
 }
@@ -540,7 +540,7 @@ void TMenuBarCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	ShowDebug("TMenuBarCodeGenerator::GenerateAll Exit from While");
 }
 
-bool TMenuBarCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile = true)
+bool TMenuBarCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile)
 {
 	FHeaderCodeFile = new TCodeFile(AClassName,APath,"h");
 	FBodyCodeFile = new TCodeFile(AClassName,APath,"cpp");

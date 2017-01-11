@@ -31,7 +31,7 @@ int TStringList::Add(string Value)
  	return result;
 }
 
-int TStringList::AddItem(string Value, void *AnItem, bool CanBeDestroyed = false)
+int TStringList::AddItem(string Value, void *AnItem, bool CanBeDestroyed)
 {
 //	printf("----------TStringList::AddItem-- Value = %s\n",Value.data());
 	int result = Add(Value);

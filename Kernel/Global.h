@@ -11,7 +11,7 @@ extern void ShowMessage(const char *,BPoint);
 extern void ShowMessage(const char *,long);
 extern void ShowMessageHexa(const char *, long);
 extern void ShowMessage(const char *, const char *);
-extern void ShowMessage(string);
+extern void ShowMessage(std::string);
 extern char *IntToStr(int);
 extern char *IntToStr(long);
 extern char *FloatToStr(float);
@@ -22,7 +22,7 @@ extern double StrToDouble(const char *);
 extern int StrToInt(char *AStr);
 extern long StrToLong(char *AStr);
 extern double StrToDouble(char *AStr);
-extern string StrCopy(string, int, int );
+extern std::string StrCopy(std::string, int, int );
 extern void PrintMessage(BMessage *AMessage,int tab);
-extern bool IsFoundInside(string , const char *);
+extern bool IsFoundInside(std::string , const char *);
 #endif

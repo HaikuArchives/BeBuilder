@@ -12,7 +12,7 @@ class TBeBuilderOption : public BOption
 		TBeBuilderOption(const char *filename);
 		TBeBuilderOption(void);
 		void ApplyUpdates(void); 	
-		string FEditorMimeType;
+		std::string FEditorMimeType;
 		
 };
 #endif

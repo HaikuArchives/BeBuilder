@@ -164,11 +164,11 @@ void TRadioButtonCodeGenerator::GenerateAll(const char *APath,const char *ClassN
 	PrepareCode(APath,ClassName,true);	
 
 }
-bool TRadioButtonCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TRadioButtonCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TRadioButtonCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TRadioButtonCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <RadioButton.h>\n");
@@ -186,11 +186,11 @@ bool TRadioButtonCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FHeaderLine3->AddLine(NULL,"class","public:",NULL);	
 	return true;
 }
-bool TRadioButtonCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TRadioButtonCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TRadioButtonCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TRadioButtonCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	string ACtorLabel = FRadioButtonComponent->FParent->FClassName + "::" + FRadioButtonComponent->FParent->FClassName;
 
@@ -244,7 +244,7 @@ bool TRadioButtonCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TRadioButtonCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TRadioButtonCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine1 = new TCodeLine(FBodyCodeFile);
 	FBodyLine1->AddString("\tF");
@@ -271,7 +271,7 @@ bool TRadioButtonCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = t
 
 	return true;
 }
-bool TRadioButtonCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TRadioButtonCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

@@ -102,7 +102,7 @@ SRCS= 	BeBuilder.cpp \
 #	specify the resource files to use
 #	full path or a relative path to the resource file can be used.
 RSRCS= bebuilder.rsrc \
-		./Resources/ViewResource.rsrc \
+		# ./Resources/ViewResource.rsrc \
 		./Resources/WindowResource.rsrc
 
 #	specify additional libraries to link against
@@ -117,7 +117,7 @@ RSRCS= bebuilder.rsrc \
 #		library: my_lib.a entry: my_lib.a or path/my_lib.a
 LIBS=	be \
 		translation \
-		stdc++.r4 \
+		$(STDCPPLIBS) \
 		tracker \
 		root
 		

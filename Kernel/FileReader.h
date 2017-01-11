@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <fstream>
+#include <cstdlib>
 #include <File.h>
 
 using namespace std;
