@@ -162,11 +162,11 @@ void TCheckBoxCodeGenerator::GenerateAll(const char *APath,const char *ClassName
 	ShowDebug(string("GenerateAll ClassName=") + ClassName);
 	PrepareCode(APath,ClassName,true);	
 }
-bool TCheckBoxCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TCheckBoxCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TCheckBoxCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TCheckBoxCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <CheckBox.h>\n");
@@ -183,11 +183,11 @@ bool TCheckBoxCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FHeaderLine3->AddLine(NULL,"class","public:",NULL);	
 	return true;
 }
-bool TCheckBoxCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TCheckBoxCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TCheckBoxCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TCheckBoxCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	string ACtorLabel = FCheckBoxComponent->FParent->FClassName + "::" + FCheckBoxComponent->FParent->FClassName;
 
@@ -242,7 +242,7 @@ bool TCheckBoxCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TCheckBoxCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TCheckBoxCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine1 = new TCodeLine(FBodyCodeFile);
 	FBodyLine1->AddString("\tF");
@@ -271,7 +271,7 @@ bool TCheckBoxCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true
 
 	return true;
 }
-bool TCheckBoxCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TCheckBoxCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

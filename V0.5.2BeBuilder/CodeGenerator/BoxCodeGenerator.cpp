@@ -182,7 +182,7 @@ void TBoxCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	PrepareCode(APath,ClassName,true);
 	ShowDebug("TBoxCodeGenerator::GenerateAll Exit from While");
 }
-bool TBoxCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TBoxCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine = new TCodeLine(FBodyCodeFile);
 	FBodyLine->Copyrights();
@@ -302,7 +302,7 @@ bool TBoxCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
 	}
 	return true;
 }
-bool TBoxCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TBoxCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine->Copyrights();
@@ -375,7 +375,7 @@ bool TBoxCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	}
 	return true;
 }
-bool TBoxCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TBoxCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	ShowDebug("CreateMakeFile Inside.");
 	TCodeLine *FMakeFileLine = new TCodeLine(FMakeFileCodeFile);
@@ -390,7 +390,7 @@ bool TBoxCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
 	ShowDebug("CreateMakeFile Quitting.");	
 	return true;
 }
-bool TBoxCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TBoxCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FBoxComponent->FParent->FCodeGenerator->FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <Box.h>\n"); 
@@ -465,11 +465,11 @@ bool TBoxCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TBoxCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TBoxCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TBoxCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TBoxCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	FHeaderCodeFile = new TCodeFile(AClassName,APath,"h");
 	FBodyCodeFile = new TCodeFile(AClassName,APath,"cpp");

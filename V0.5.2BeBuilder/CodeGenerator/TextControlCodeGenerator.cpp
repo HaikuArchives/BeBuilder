@@ -174,12 +174,12 @@ void TTextControlCodeGenerator::GenerateAll(const char *APath,const char *ClassN
 
 }
 
-bool TTextControlCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TTextControlCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
 
-bool TTextControlCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TTextControlCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <TextControl.h>\n");
@@ -198,12 +198,12 @@ bool TTextControlCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TTextControlCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TTextControlCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
 
-bool TTextControlCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TTextControlCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	string ACtorLabel = FTextControlComponent->FParent->FClassName + "::" + FTextControlComponent->FParent->FClassName;
 
@@ -277,7 +277,7 @@ bool TTextControlCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TTextControlCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TTextControlCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 
 	TCodeLine *FBodyLine1 = new TCodeLine(FBodyCodeFile);
@@ -308,7 +308,7 @@ bool TTextControlCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = t
 	return true;
 }
 
-bool TTextControlCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TTextControlCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

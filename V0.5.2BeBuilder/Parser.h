@@ -4,6 +4,7 @@
 using namespace std;
 #include <File.h>
 #include "Object.h"
+#include <cstdlib>
 
 class TParser : public TObject
 {

@@ -16,11 +16,11 @@ void TMenuCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	PrepareCode(APath,ClassName,true);	
 }
 
-bool TMenuCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TMenuCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TMenuCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TMenuCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <Menu.h>\n");
@@ -38,12 +38,12 @@ bool TMenuCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FHeaderLine3->AddLine(NULL,"class","public:",NULL);	
 	return true;
 }
-bool TMenuCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TMenuCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
 	
-bool TMenuCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TMenuCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 //	string ACtorLabel = FMenuComponent->FParent->FClassName + "::" + FMenuComponent->FParent->FClassName;
 	string ACtorLabel = "::"; 
@@ -94,11 +94,11 @@ bool TMenuCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TMenuCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TMenuCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TMenuCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TMenuCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

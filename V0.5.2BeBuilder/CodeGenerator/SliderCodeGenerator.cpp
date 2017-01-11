@@ -149,11 +149,11 @@ void TSliderCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	PrepareCode(APath,ClassName,true);	
 
 }
-bool TSliderCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TSliderCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TSliderCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TSliderCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <Slider.h>\n");
@@ -171,11 +171,11 @@ bool TSliderCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FHeaderLine3->AddLine(NULL,"class","public:",NULL);	
 	return true;
 }
-bool TSliderCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TSliderCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TSliderCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TSliderCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	string ACtorLabel = FSliderComponent->FParent->FClassName + "::" + FSliderComponent->FParent->FClassName;
 
@@ -243,7 +243,7 @@ bool TSliderCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TSliderCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TSliderCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine1 = new TCodeLine(FBodyCodeFile);
 	FBodyLine1->AddString("\tF");
@@ -272,7 +272,7 @@ bool TSliderCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TSliderCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TSliderCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

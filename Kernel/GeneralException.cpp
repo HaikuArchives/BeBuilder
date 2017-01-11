@@ -13,14 +13,14 @@
 }
 */
 
-GeneralException::GeneralException(const char *AMessage,const char *ALocation,bool ThrowNow = false)
+GeneralException::GeneralException(const char *AMessage,const char *ALocation,bool ThrowNow)
 {
 	Message = AMessage;
 	Location = ALocation;
 	if (ThrowNow) { throw(this);}
 }
 
-GeneralException::~GeneralException(void)
+GeneralException::~GeneralException(void) throw()
 {
 	;
 }

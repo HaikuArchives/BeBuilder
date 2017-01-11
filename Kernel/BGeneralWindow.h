@@ -14,7 +14,7 @@ class BGeneralWindow : public BWindow
 		~BGeneralWindow(void);
 		bool QuitRequested(void);
 	private:
-		string FTitre;
-		string FPreferences;
+		std::string FTitre;
+		std::string FPreferences;
 };
 #endif

@@ -1,6 +1,6 @@
 #include "ComponentItem.h"
 #include <Messenger.h>
-TComponentItem::TComponentItem(const char *AName,const char *ATypeName,TComponent *AComponent,BHandler *AHandler,uint32 level = 0, bool expanded = true)
+TComponentItem::TComponentItem(const char *AName,const char *ATypeName,TComponent *AComponent,BHandler *AHandler,uint32 level, bool expanded)
 : BStringItem(AName,level,expanded)
 {
 	printf("ComponentItem constructor Debut Constructeur FName= %s Type= %s\n",AName,ATypeName);

@@ -184,7 +184,7 @@ void TMenuFieldCodeGenerator::GenerateAll(const char *APath,const char *ClassNam
 	PrepareCode(APath,ClassName,true);
 	ShowDebug("TMenuBarCodeGenerator::GenerateAll Exit from While");
 }
-bool TMenuFieldCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TMenuFieldCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine = new TCodeLine(FBodyCodeFile);
 	FBodyLine->Copyrights();
@@ -313,7 +313,7 @@ bool TMenuFieldCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
 
 	return true;
 }
-bool TMenuFieldCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TMenuFieldCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine->Copyrights();
@@ -389,7 +389,7 @@ bool TMenuFieldCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	}
 	return true;
 }
-bool TMenuFieldCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TMenuFieldCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	ShowDebug("CreateMakeFile Inside.");
 	TCodeLine *FMakeFileLine = new TCodeLine(FMakeFileCodeFile);
@@ -403,7 +403,7 @@ bool TMenuFieldCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
 	ShowDebug("CreateMakeFile Quitting.");	
 	return true;
 }
-bool TMenuFieldCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TMenuFieldCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 /*
 */
@@ -453,11 +453,11 @@ bool TMenuFieldCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FBodyLine6->AddLine(NULL,ACtorLabel.c_str(),NULL,"}");
 	return true;
 }
-bool TMenuFieldCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TMenuFieldCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TMenuFieldCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TMenuFieldCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	FHeaderCodeFile = new TCodeFile(AClassName,APath,"h");
 	FBodyCodeFile = new TCodeFile(AClassName,APath,"cpp");

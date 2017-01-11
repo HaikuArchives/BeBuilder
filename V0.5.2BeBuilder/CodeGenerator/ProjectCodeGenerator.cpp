@@ -153,7 +153,7 @@ bool TProjectCodeGenerator::SkeletonMakeFile(TFileRW *AFileRW)
 }
 // Dynamic Code
 
-bool TProjectCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TProjectCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	DEBUGPRINT("TProjectCodeGenerator::CreateBody enterring...\n");
 
@@ -201,7 +201,7 @@ bool TProjectCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
 
 }
 
-bool TProjectCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TProjectCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	DEBUGPRINT("TProjectCodeGenerator::CreateHeader enterring...\n");
 	FHeaderLine = new TCodeLine(FHeaderCodeFile);
@@ -246,7 +246,7 @@ bool TProjectCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TProjectCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TProjectCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	DEBUGPRINT("TProjectCodeGenerator::CreateMakeFile enter.")
 	FMakeFileLine = new TCodeLine(FMakeFileCodeFile);
@@ -317,7 +317,7 @@ void TProjectCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 	PrepareCode(APath,ClassName,true);
 }
 
-bool TProjectCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile = true)
+bool TProjectCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile)
 {
 	//------------New dynamic code generation----------
 	FHeaderCodeFile = new TCodeFile(AClassName,APath,"h");

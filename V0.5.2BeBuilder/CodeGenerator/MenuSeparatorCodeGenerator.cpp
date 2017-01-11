@@ -47,22 +47,22 @@ void TMenuSeparatorCodeGenerator::GenerateAll(const char *APath,const char *Clas
 	PrepareCode(APath,ClassName,true);	
 }
 
-bool TMenuSeparatorCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TMenuSeparatorCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
 
-bool TMenuSeparatorCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TMenuSeparatorCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	return true;
 }
 
-bool TMenuSeparatorCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TMenuSeparatorCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
 
-bool TMenuSeparatorCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TMenuSeparatorCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 //	string ACtorLabel = FMenuSeparatorComponent->FParent->FClassName + "::" + FMenuSeparatorComponent->FParent->FClassName;
 	string ACtorLabel = "::";
@@ -84,11 +84,11 @@ bool TMenuSeparatorCodeGenerator::CreateConstructor(bool ReallyWriteInFile = tru
 	}
 	return true;
 }
-bool TMenuSeparatorCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TMenuSeparatorCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TMenuSeparatorCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TMenuSeparatorCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

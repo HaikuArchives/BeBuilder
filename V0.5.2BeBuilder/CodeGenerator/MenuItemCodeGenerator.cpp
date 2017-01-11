@@ -233,11 +233,11 @@ void TMenuItemCodeGenerator::GenerateAll(const char *APath,const char *ClassName
 	ShowDebug(string("GenerateAll ClassName=") + ClassName);
 	PrepareCode(APath,ClassName,true);	
 }
-bool TMenuItemCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TMenuItemCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TMenuItemCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TMenuItemCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <MenuItem.h>\n");
@@ -250,11 +250,11 @@ bool TMenuItemCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FHeaderLine3->AddLine(NULL,"class","public:",NULL);	
 	return true;
 }
-bool TMenuItemCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TMenuItemCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TMenuItemCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TMenuItemCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 //	string ACtorLabel = FMenuItemComponent->FParent->FParent->FClassName + "::" + FMenuItemComponent->FParent->FParent->FClassName;
 
@@ -298,7 +298,7 @@ bool TMenuItemCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	}	
 	return true;
 }
-bool TMenuItemCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TMenuItemCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine1 = new TCodeLine(FBodyCodeFile);
 	FBodyLine1->AddString("\tF");
@@ -327,7 +327,7 @@ bool TMenuItemCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true
 	
 	return true;
 }
-bool TMenuItemCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile = true)
+bool TMenuItemCodeGenerator::PrepareCode(const char *APath, const char *AClassName, bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);

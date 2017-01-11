@@ -22,6 +22,6 @@ class BGeneralWindowOption : public BOption
 		float Bottom;
 		float Left;
 		float Right;
-		string TheWindowName;
+		std::string TheWindowName;
 };
 #endif

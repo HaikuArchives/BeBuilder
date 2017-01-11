@@ -6,6 +6,8 @@
 #include <Resources.h>
 #include <FindDirectory.h>
 #include "GeneralException.h"
+#include <cstring>
+#include <cstdlib>
 class BOption : public BMessage
 {
 	public:

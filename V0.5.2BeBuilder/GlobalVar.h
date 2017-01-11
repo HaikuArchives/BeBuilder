@@ -1,9 +1,9 @@
 #ifndef __GLOBALVAR_H__
 #define __GLOBALVAR_H__
-#include <iostream.h>
+#include <iostream>
 //For debugging
 #define DEBUG 1
-#define DEBUGPRINT(x) if(DEBUG) cout <<x<<endl;
+#define DEBUGPRINT(x) if(DEBUG) std::cout <<x<<std::endl;
 //End - For debugging
 
 const uint32 MENU_FILE_ABOUT = 199; 

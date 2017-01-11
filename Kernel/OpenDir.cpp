@@ -1,8 +1,8 @@
 #include "OpenDir.h"
 
-TOpenDir::TOpenDir(BMessenger* target = NULL,entry_ref *panel_directory = NULL,uint32 node_flavors = 0,
-bool allow_multiple_selection = true,BMessage *message = NULL,BRefFilter *filter = NULL,
-bool modal = false,bool hide_when_done = true)
+TOpenDir::TOpenDir(BMessenger* target,entry_ref *panel_directory,uint32 node_flavors,
+bool allow_multiple_selection,BMessage *message,BRefFilter *filter,
+bool modal,bool hide_when_done)
 :BFilePanel(B_OPEN_PANEL,target,panel_directory,node_flavors,allow_multiple_selection,message,filter,modal,hide_when_done)
 //:BFilePanel(B_OPEN_PANEL,target,panel_directory,B_DIRECTORY_NODE | B_SYMLINK_NODE,allow_multiple_selection,message,filter,modal,hide_when_done)
 /*

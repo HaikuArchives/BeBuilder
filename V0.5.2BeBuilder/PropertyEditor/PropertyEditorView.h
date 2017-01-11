@@ -20,7 +20,7 @@ class TPropertyEditorView : public BView
 		TPropertyEditorView(BRect frame);
 		virtual ~TPropertyEditorView();
 		virtual void SetProperty(TProperty *AProperty,int32 AnIndex,BHandler *AHandler);
-		void TPropertyEditorView::MessageReceived(BMessage *message);
+		void MessageReceived(BMessage *message);
 //	protected :
 		BTextControl *FTextEdit;
 //	private :	

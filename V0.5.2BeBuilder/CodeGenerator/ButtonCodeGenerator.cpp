@@ -177,11 +177,11 @@ bool TButtonCodeGenerator::InsertionAttachedToWindow(TFileRW *AFileRWHeader, TFi
 	return false;
 }
 */
-bool TButtonCodeGenerator::CreateBody(bool ReallyWriteInFile = true)
+bool TButtonCodeGenerator::CreateBody(bool ReallyWriteInFile)
 {
 	return true;
 }
-bool TButtonCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
+bool TButtonCodeGenerator::CreateHeader(bool ReallyWriteInFile)
 {
 	TCodeLine *FHeaderLine1 = new TCodeLine(FHeaderCodeFile);
 	FHeaderLine1->AddString("#include <Button.h>\n");
@@ -199,12 +199,12 @@ bool TButtonCodeGenerator::CreateHeader(bool ReallyWriteInFile = true)
 	if (ReallyWriteInFile) FHeaderLine3->AddLine(NULL,"class","public:",NULL);	
 	return true;
 }
-bool TButtonCodeGenerator::CreateMakeFile(bool ReallyWriteInFile = true)
+bool TButtonCodeGenerator::CreateMakeFile(bool ReallyWriteInFile)
 {
 	return true;
 }
 
-bool TButtonCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
+bool TButtonCodeGenerator::CreateConstructor(bool ReallyWriteInFile)
 {
 	string ACtorLabel = FButtonComponent->FParent->FClassName + "::" + FButtonComponent->FParent->FClassName;
 
@@ -268,7 +268,7 @@ bool TButtonCodeGenerator::CreateConstructor(bool ReallyWriteInFile = true)
 	return true;
 }
 
-bool TButtonCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile = true)
+bool TButtonCodeGenerator::CreateMessageReceived(bool ReallyWriteInFile)
 {
 	TCodeLine *FBodyLine1 = new TCodeLine(FBodyCodeFile);
 	FBodyLine1->AddString("\tF");
@@ -313,7 +313,7 @@ void TButtonCodeGenerator::GenerateAll(const char *APath,const char *ClassName)
 }
 
 
-bool TButtonCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile = true)
+bool TButtonCodeGenerator::PrepareCode(const char *APath, const char *AClassName,bool ReallyWriteInFile)
 {
 	TCodeGenerator::PrepareCode(APath,AClassName,ReallyWriteInFile);
 	CreateConstructor(ReallyWriteInFile);
