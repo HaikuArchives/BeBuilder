@@ -98,12 +98,9 @@ SRCS= 	BeBuilder.cpp \
 		./Component/SliderComponent.cpp \
 		./CodeGenerator/SliderCodeGenerator.cpp 
 
-		
-#	specify the resource files to use
-#	full path or a relative path to the resource file can be used.
-RSRCS= bebuilder.rsrc \
-		# ./Resources/ViewResource.rsrc \
-		./Resources/WindowResource.rsrc
+RDEFS= bebuilder.rdef \
+		./Resource/ViewResource.rdef \
+		./Resources/WindowResource.rdef
 
 #	specify additional libraries to link against
 #	there are two acceptable forms of library specifications
