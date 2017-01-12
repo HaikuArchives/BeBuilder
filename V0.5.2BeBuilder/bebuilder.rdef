@@ -3,13 +3,13 @@ resource app_signature "application/x-vnd.bebuilder";
 
 resource app_version {
 	major  = 0,
-	middle = 0,
-	minor  = 0,
+	middle = 5,
+	minor  = 2,
 
 	variety = B_APPV_DEVELOPMENT,
 	internal = 0,
 
-	short_info = "",
+	short_info = "GUI designer for BeOS",
 	long_info = ""
 };
 
