@@ -1,0 +1,6 @@
+1.Download repsitory from git source.
+2.Extract repository.
+3.cd .../BeBuilder-master/V0.5.2BeBuilder
+4.make
+5.cd .../BeBuilder-master/V0.5.2BeBuilder/objects.x86-cc2-release/
+6.Run BeBuilder
