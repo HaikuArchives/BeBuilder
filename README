@@ -1,3 +1,13 @@
+# BeBuilder
+
+## by Jerome Fillon
+
+![screenshot](screenshot.png)
+
+### Build instructions
+Navigate to the main source directory, and go to `V0.5.2BeBuilder`.
+Then run `make`.
+
 Hi all.
 
 This night i have decided to release the source code of BeBuilder.
@@ -38,5 +48,4 @@ Be is giving its development tools for free to help developers, let's help devel
 Jerome Fillon
 Montreal, Quebec.
 jerome at softimedia dot com
-
 
