@@ -1,6 +1,5 @@
 # BeBuilder
-
-## by Jerome Fillon
+### by Jerome Fillon
 
 ![screenshot](screenshot.png)
 
