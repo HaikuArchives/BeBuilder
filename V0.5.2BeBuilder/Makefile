@@ -67,47 +67,47 @@ SRCS = 	BeBuilder.cpp \
 		EditorOption.cpp \
 		WindowOption.cpp \
 		ViewOption.cpp \
-		./PropertyEditor/PropertyEditorView.cpp \
-		./PropertyEditor/PropertyEditorWindow.cpp \
-		./PropertyEditor/MenuPropertyEditorChoice.cpp \
-		./PropertyEditor/PropertyEditorChoice.cpp \
-		./PropertyEditor/PropertyEditorChoiceView.cpp \
-		./PropertyEditor/PropertyEditorMultiChoice.cpp \
-		./PropertyEditor/PropertyEditorMultiChoiceView.cpp \
-		./PropertyEditor/PropertyEditorStandardView.cpp \
-		./PropertyEditor/PropertyEditorStandard.cpp \
-		./Component/WindowComponent.cpp \
-		./Component/ViewComponent.cpp \
-		./Component/ButtonComponent.cpp \
-		./Component/ProjectComponent.cpp \
-		./CodeGenerator/WindowCodeGenerator.cpp \
-		./CodeGenerator/ViewCodeGenerator.cpp \
-		./CodeGenerator/ProjectCodeGenerator.cpp \
-		./CodeGenerator/ButtonCodeGenerator.cpp \
-		./Component/TextControlComponent.cpp \
-		./CodeGenerator/TextControlCodeGenerator.cpp \
-		./Component/CheckBoxComponent.cpp \
-		./CodeGenerator/CheckBoxCodeGenerator.cpp \
-		./Component/RadioButtonComponent.cpp \
-		./CodeGenerator/RadioButtonCodeGenerator.cpp \
-		./Component/MenuComponent.cpp \
-		./CodeGenerator/MenuCodeGenerator.cpp \
-		./CodeGenerator/MenuBarCodeGenerator.cpp \
-		./Component/MenuBarComponent.cpp \
-		./CodeGenerator/MenuItemCodeGenerator.cpp \
-		./CodeGenerator/MenuSeparatorCodeGenerator.cpp \
-		./Component/MenuItemComponent.cpp \
-		./Component/MenuSeparatorComponent.cpp \
-		./Component/MenuFieldComponent.cpp \
-		./CodeGenerator/MenuFieldCodeGenerator.cpp \
-		./Component/BoxComponent.cpp \
-		./CodeGenerator/BoxCodeGenerator.cpp \
-		./Component/SliderComponent.cpp \
-		./CodeGenerator/SliderCodeGenerator.cpp 
+		PropertyEditor/PropertyEditorView.cpp \
+		PropertyEditor/PropertyEditorWindow.cpp \
+		PropertyEditor/MenuPropertyEditorChoice.cpp \
+		PropertyEditor/PropertyEditorChoice.cpp \
+		PropertyEditor/PropertyEditorChoiceView.cpp \
+		PropertyEditor/PropertyEditorMultiChoice.cpp \
+		PropertyEditor/PropertyEditorMultiChoiceView.cpp \
+		PropertyEditor/PropertyEditorStandardView.cpp \
+		PropertyEditor/PropertyEditorStandard.cpp \
+		Component/WindowComponent.cpp \
+		Component/ViewComponent.cpp \
+		Component/ButtonComponent.cpp \
+		Component/ProjectComponent.cpp \
+		CodeGenerator/WindowCodeGenerator.cpp \
+		CodeGenerator/ViewCodeGenerator.cpp \
+		CodeGenerator/ProjectCodeGenerator.cpp \
+		CodeGenerator/ButtonCodeGenerator.cpp \
+		Component/TextControlComponent.cpp \
+		CodeGenerator/TextControlCodeGenerator.cpp \
+		Component/CheckBoxComponent.cpp \
+		CodeGenerator/CheckBoxCodeGenerator.cpp \
+		Component/RadioButtonComponent.cpp \
+		CodeGenerator/RadioButtonCodeGenerator.cpp \
+		Component/MenuComponent.cpp \
+		CodeGenerator/MenuCodeGenerator.cpp \
+		CodeGenerator/MenuBarCodeGenerator.cpp \
+		Component/MenuBarComponent.cpp \
+		CodeGenerator/MenuItemCodeGenerator.cpp \
+		CodeGenerator/MenuSeparatorCodeGenerator.cpp \
+		Component/MenuItemComponent.cpp \
+		Component/MenuSeparatorComponent.cpp \
+		Component/MenuFieldComponent.cpp \
+		CodeGenerator/MenuFieldCodeGenerator.cpp \
+		Component/BoxComponent.cpp \
+		CodeGenerator/BoxCodeGenerator.cpp \
+		Component/SliderComponent.cpp \
+		CodeGenerator/SliderCodeGenerator.cpp 
 
 RDEFS = bebuilder.rdef \
-		./Resource/ViewResource.rdef \
-		./Resources/WindowResource.rdef
+		Resource/ViewResource.rdef \
+		Resources/WindowResource.rdef
 
 #	Specify the resource files to use. Full or relative paths can be used.
 #	Both RDEFS and RSRCS can be utilized in the same Makefile.
