@@ -40,7 +40,7 @@ bool TFileWriter::WriteData (const char *ABuffer,uint32 nbWrite)
 	if (TheBFileWriter)
 	{
 		FNbBytesWrite += TheBFileWriter->Write(ABuffer,nbWrite);
-		FNbBytesWrite += TheBFileWriter->Write('\0',1);
+		FNbBytesWrite += TheBFileWriter->Write("\0",1);
 		TheBFileWriter->Sync();
 		resultat = true;
 	}

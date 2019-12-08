@@ -27,7 +27,7 @@ void TObject::ShowDebug(ostrstream AStream)
 {
 	if (FDebugMode)
 	{
-		cout << AStream;
+		cout << AStream.str();
 	}	
 }
 
